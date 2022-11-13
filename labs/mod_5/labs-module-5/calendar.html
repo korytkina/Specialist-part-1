@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Календарик</title>
+<script>
+
+function calendar( year, month ) {
+
+month--;
+
+var rusMonth = [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',  ];
+
+// находим кол-во дней в месяце
+var days = new Date( year, month + 1 ) - new Date( year, month );
+days /= 1000 * 60 * 60 * 24;
+console.log( days ); // 31
+
+
+/* 
+получаем правильный индекс дня 
+П В С Ч П С В
+1 2 3 4 5 6 0 - это есть
+0 1 2 3 4 5 6 - а это надо
+по остатку от деления
+*/
+
+var startDay = new Date( year, month );
+var index = ( startDay.getDay() + 6 ) % 7;
+console.log( index ); // 6
+
+// находим кол-во строк
+var rows = Math.ceil( (days + index) / 7 ); 
+console.log( rows ); // 6
+
+// строим таблицу
+var table = '<table border="1">';
+
+table += '<caption>';
+table += `${rusMonth[month]} ${year}`;
+table += '</caption>';
+
+// строки
+for(var i = 0, k = 1 - index; i<rows; i++ ){
+table += '<tr>';
+
+	// ячейки
+	for(var j=0; j<7; j++){
+		table += '<td>';
+		if( k>0 && k <= days )
+			table += k;
+		else
+			table += '';
+		table += '</td>';
+		k++;
+	}
+
+table += '</tr>';
+}
+
+table += '</table>';
+
+document.write( table );
+
+}
+
+calendar( 2022, 5 );
+
+</script>
+</head>
+
+<body>
+<h2>Hello world</h2>
+</body>
+</html>

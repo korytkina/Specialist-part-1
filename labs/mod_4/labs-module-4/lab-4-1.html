@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа - 4.1</title>
+<script>
+/*
+- Создайте пустой объект book1
+- Добавьте объекту свойства: title, pubYear и price с произвольными значениями
+- Создайте объект book2 и установите свойства title, pubYear и price с произвольными значениями
+- Выведите свойства объектов в цикле
+*/
+
+let book1 = {};
+
+book1.title = 'About Cat';
+book1.pubYear = 2005;
+book1.price = 15;
+
+let book2 = {
+	title: 'About Dog',
+	pubYear: 2010,
+	price: 10,
+};
+
+var title3 = 'About Crow',
+ pubYear3 = 2015, price3 = 7;
+
+let book3 = {
+	title3,
+	pubYear3,
+	price3,
+}
+console.log( book1.title, book3.title3 );
+
+for( var i in book1 ) {
+ //         ключ        значение
+ console.log( i +' : '+ book1[i] );
+ console.log( '\t'+i +' : '+ book1['title'] );
+}
+
+
+
+</script>
+</head>
+
+<body>
+
+<img src='img-1.jpg' alt='' id='pict'>
+
+<script>
+
+// получаю ссылку на HTML-элемент оп его ID
+var pict = document.getElementById('pict');
+
+console.log(pict, typeof pict);
+
+// Object.freeze( pict );
+
+pict.src = 'img-2.jpg';
+pict.width = '150';
+pict.style.border = '10px dashed #fc0fc0';
+
+var count = 0;
+for(var i in pict)
+// ключ значение
+console.log( ++count +' : '+ i +' : '+ pict[i] );
+
+var user = {
+	name: 'John',
+	age: 25,
+	passHash: 'gsfd8hfgfn9ngs',
+	admin: true,
+};
+
+Object.freeze( user );
+
+user.name = 'Вася';
+
+console.log( user.name );
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+<meta charset="utf-8">
+<title>Зарезервированные ключевые слова в ECMAScript 6</title>
+
+<style>
+* 	{margin: 0; padding: 0;}
+
+body{
+	font: 20px Arial, sans-serif;
+	background: #fff;}
+
+caption	{
+	text-align: center;
+	padding: 20px 0;}
+
+table	{
+	margin: auto;
+	border-collapse: collapse;}
+	
+td		{
+	border: 2px solid #999;
+	padding: 6px;		
+	width: 125px;}
+</style>
+
+<script>
+	
+var words = ['break', 'case', 'class', 'catch', 'const', 'continue', 'debugger', 'default', 'delete', 'do', 'else', 'export', 'extends', 'finally', 'for', 'function', 'if', 'import', 'in', 'instanceof', 'let', 'new', 'return', 'super', 'switch', 'this', 'throw', 'try', 'typeof', 'var', 'void', 'while', 'with', 'yield'];	
+	
+var n = 0; //номер элемента массива
+
+//определяем длину массива
+var len = words.length;
+
+//задаем кол-во ячеек в строке таблицы
+var cell = 3;
+
+//определяем кол-во строк таблицы и округляем в большую сторону
+var str = Math.ceil(len/cell);
+
+//рисуем таблицу
+var table = '<table>';
+
+	table += "<caption><a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar' target='_blank'>Зарезервированные ключевые слова в ECMAScript 6</a></caption>";
+
+for(var tr=0; tr<str; tr++){
+	table += '<tr>';
+
+	for(var td=0; td<cell; td++){
+	table += '<td>';
+
+		if(n < len){
+			table += words[n];
+			n++;
+		}
+		else{
+			table += '&nbsp;';
+		};
+
+	table += '</td>';
+	};
+	table += '</tr>';
+};
+table += '</table>';
+
+document.write(table);
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

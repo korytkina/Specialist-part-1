@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа - 4.3</title>
+<script>
+/*
+- Числа Фибоначчи
+- var fibs = [ 1, 1 ], n = 10;
+- Заполните массив fibs до 10 элементов так, чтобы каждый последующий элемент был равен сумме двух предыдущих
+- Результат: (10) [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+*/
+var fibs = [ 1, 1 ], n = 10;
+for( var i = 2; i<n; i++ )
+	// fibs[2] = fibs[1] + fibs[0]
+	fibs[i] = fibs[i-1] + fibs[i-2];
+	
+console.log(fibs);	
+
+
+// ****************
+
+var arr = [ 'cat', 'dog', 10, true ];
+console.log( arr );
+console.log( arr[ 1 ] );
+arr[ 1 ] = 'Cow';
+console.log( arr[ 1 ] );
+// добавление элемента
+arr[4] = 'New Elem';
+// длина массива
+console.log( arr.length ); // 5
+// добавление элемента
+arr.push( 'Fish', 'Crow');
+console.log( arr );
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

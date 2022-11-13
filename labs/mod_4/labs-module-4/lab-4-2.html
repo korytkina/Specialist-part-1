@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа - 4.2</title>
+<script>
+/*
+- Используйте код Лабораторной работы 4.1
+- Добавьте объекту book1 свойство show
+- Свойство должно содержать анонимную функцию выводящую название и цену книги
+- Опишите функцию showBook(), которая выводит название и цену книги
+- Добавьте объекту book2 свойство show
+- Свойство должно содержать функцию showBook()
+- Вызовите метод show() у обоих объектов
+*/
+
+let book1 = {};
+
+book1.title = 'About Cat';
+book1.pubYear = 2005;
+book1.price = 15;
+
+let book2 = {
+	title: 'About Dog',
+	pubYear: 2010,
+	price: 10,
+};
+
+var title3 = 'About Crow',
+ pubYear3 = 2015, price3 = 7;
+
+let book3 = {
+	title3,
+	pubYear3,
+	price3,
+}
+var a = 10;
+function show(){
+	console.log( this.a );
+	console.log( 'Название: ' + this.title );
+	console.log( 'Цена: ' + this.price );
+	console.log( window == this );
+	console.log( book1 == this );
+	console.log( '*************' );	
+}
+show();
+// добавляем объектам
+book1.showBook = show;
+book2.showBook = show;
+
+// вызываем метод ShowBook
+book1.showBook();
+book2.showBook();
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

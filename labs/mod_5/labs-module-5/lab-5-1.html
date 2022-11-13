@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа - 5.1</title>
+<script>
+/*
+- Создайте конструктор Book со свойствами:
+	title
+	pubYear
+	price
+- Создайте объект типа Book передав в конструктор произвольные значение
+- Добавьте в прототип конструктора Book метод show, который выводит значения свойств title и price
+- Вызовите метод show созданного объекта
+*/
+
+function Book( title, pubYear, price ) {
+	this.title = title;
+	this.pubYear = pubYear;
+	this.price = price;
+	this.show = function(){
+		console.log( 'Название: ' + this.title );
+		console.log( 'Цена: ' + this.price );
+	}
+}
+
+/*
+Book.prototype.show = function(){
+	console.log( 'Название: ' + this.title );
+	console.log( 'Цена: ' + this.price );
+}
+*/
+
+// создаем объекты
+var about_cat = new Book( 'About Cat', 2010, 15 );
+var about_dog = new Book( 'About Dog', 2020, 22 );
+var about_cow = new Book( 'About Cow', 2012, 30 );
+
+about_cat.show();
+about_dog.show();
+about_cow.show();
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

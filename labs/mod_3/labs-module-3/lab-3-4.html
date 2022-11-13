@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа - 3.4</title>
+<script>
+
+function showTable( num, space, pet ) {
+	// num - число строк
+	// space - символ разделитель
+	// pet - число зверей в строке
+	var cat = 'cat', dog = 'dog';
+	var str = ''; // содержимосе строки
+	var flag = true; // переключатель зверей
+	var tmp = 0; // счетчик зверей
+	
+	// создаем строки
+	for( var i=0; i<num; i++ ) {
+		str = ''; // обнуляем переменную
+		// наполняем строки
+		for( var j=0; j<pet; j++ ) {
+		
+			if( flag ) {
+				tmp++;
+				str += dog + space;
+				if( tmp == 3 ){ flag = false; tmp = 0; }
+			} else {
+				tmp++;
+				str += cat + space;
+				if( tmp == 2 ){ flag = true; tmp = 0; }
+			}		
+		
+		} // вложенный цикл
+	console.log( str );	
+	} // внешний цикл
+}
+
+showTable( 5, '\t', 6 );
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

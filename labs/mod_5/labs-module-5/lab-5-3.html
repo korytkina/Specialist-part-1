@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа - 5.3</title>
+<script>
+/*
+Вывести на экран текущую дату в формате 
+'28 февраля 2018 года'
+*/
+
+var rusMonth = [ 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',  ];
+
+console.log( rusMonth.length );
+
+// день месяца
+var thedate = new Date().getDate();
+
+// месяц
+var themonth = new Date().getMonth();
+
+// год
+var theyear = new Date().getFullYear();
+
+console.log( thedate, themonth, theyear );
+
+var result = `${thedate} 
+${rusMonth[themonth]} 
+${theyear} 
+года`;
+
+console.log(result);
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Красим body</title>
+
+</head>
+<body>
+
+<h1>Hello</h1>
+
+<script>
+
+var i = 0;
+
+function foo() {
+// onclick = function( ) {
+ i++;
+ if( i % 2 )
+  document.body.style.backgroundColor = '#cfc';
+
+ else
+  document.body.style.backgroundColor = 'transparent';
+  
+  console.log( i );
+ }
+ 
+// onclick = foo;
+
+window.addEventListener( 'click', foo );
+
+</script>
+
+</body>
+</html>

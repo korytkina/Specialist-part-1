@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Модуль 6. Практическая работа</title>
+<script>
+
+/*
+try {
+	var x = 10;
+	console.log( y );
+	console.log( x );
+} catch( e ) {
+	console.log( e.name ); // ReferenceError
+	console.log( e.message ); // y is not defined
+	console.log( 'Ошибка есть, но идем дальше' );
+}
+console.log( 'x = ' + x );
+*/
+
+try {
+	var a = 1, b = 0, x;
+	if ( b == 0 )
+		throw new Error( 'Ошибка!' );
+	x = a / b;
+} catch( e ) {
+	console.log( e.message ); // Ошибка!
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
